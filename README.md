@@ -1,10 +1,10 @@
-= Caliper.g8 =
+# Caliper.g8
 
 This repo contains a [giter8](http://github.com/n8han/giter8#readme) template
 that makes it easy to quickly write micro-benchmarks using Caliper. The
 projects uses Scala 2.10.2 and SBT 0.12.4.
 
-== Quick Start ==
+## Quick Start
 
 To use this template you'll need to have installed
 [sbt](http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html#installing-sbt)
@@ -79,7 +79,7 @@ parameter is the Fibonacci term to be generated (e.g. the 40th
 Fibonacci number, 102334155). As you can see, the Stream-based version
 is 3-4x slower than the tail-recursive version.
 
-== Writing Benchmarks ==
+## Writing Benchmarks
 
 The benchmarks are located in `src/main/scala/micro/benchmarks.scala`. Each
 method whose name starts with "test" will be treated as a benchmark. For
@@ -138,10 +138,10 @@ both benchmarks used `data1`. In that case, `testBubbleSort` would run,
 sorting the array. Then `SelectionSort` would run on an already-sorted array,
 and the test would no longer be valid.
 
-== Thinking about Benchmarks ==
+## Thinking about Benchmarks
 
 TODO
 
-== Copyright ==
+## Copyright
 
 This code is provided to you as free software under the MIT license.
