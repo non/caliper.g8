@@ -40,10 +40,6 @@ $ sbt
 [info] Done updating.
 [info] Compiling 2 Scala sources to /Users/osheim/demo/target/scala-2.10/classes...
 [info] Set current project to micro (in build file:/Users/osheim/demo/)
->
-```
-
-```
 > run
 [info] Running micro.Benchmark
 [info]  0% Scenario{vm=java, trial=0, benchmark=Recursive, size=40} 1375.70 ns; ?=3.70 ns @ 3 trials
@@ -86,11 +82,11 @@ is 3-4x slower than the tail-recursive version.
 == Writing Benchmarks ==
 
 The benchmarks are located in `src/main/scala/micro/benchmarks.scala`. Each
-benchmark has a corresponding method whose name is `testXyz` where `Xyz` is
-the benchmark name. For example, if you wanted a benchmark named `BubbleSort`
-you'd name your method `testBubbleSort`.
+method whose name starts with "test" will be treated as a benchmark. For
+example, if you wanted a benchmark named `BubbleSort` you'd name your method
+`testBubbleSort`.
 
-All benchmark methods should follow the same basic form:
+All benchmark methods should follow the same basic structure:
 
 ```scala
   def testBubbleSort(reps: Int) = run(reps) {
